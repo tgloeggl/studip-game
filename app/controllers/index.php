@@ -13,4 +13,14 @@ class IndexController extends StudipController
     {
 
     }
+
+    function get_skilltree_action()
+    {
+    
+    }
+
+    function set_skillstree_action()
+    {
+
+    }
 }
