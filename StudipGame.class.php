@@ -28,7 +28,7 @@ class StudipGame extends StudIPPlugin implements SystemPlugin {
     {
         $this->setupAutoload();
         $dispatcher = new Trails_Dispatcher(
-            $this->getPluginPath(),
+            $this->getPluginPath() . '/app',
             rtrim(PluginEngine::getLink($this, array(), null), '/'),
             'index'
         );
@@ -39,7 +39,7 @@ class StudipGame extends StudIPPlugin implements SystemPlugin {
     private function setupAutoload()
     {
         if (class_exists('StudipAutoloader')) {
-            StudipAutoloader::addAutoloadPath(__DIR__ . '/models');
+            StudipAutoloader::addAutoloadPath(__DIR__ . '/app/models');
         } else {
             spl_autoload_register(function ($class) {
                 include_once __DIR__ . $class . '.php';
