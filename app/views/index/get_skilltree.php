@@ -1,7 +1,7 @@
 {
   "html": {
     "name": "Trails",
-    "max": "3",
+    "max": "2",
     "sprite": "0x0",
     "current": "0",
     "hint": [
@@ -22,13 +22,11 @@
       }
     ],
     "sprites": {
-      "2": [
-        1,
-        0
+      "1": [
+        1, 0
       ],
-      "3": [
-        2,
-        0
+      "2": [
+        2, 0
       ]
     },
     "pos": [
@@ -38,9 +36,9 @@
   },
   "css": {
     "name": "CSS",
-    "max": "4",
+    "max": "3",
     "sprite": "6x0",
-    "current": "0",
+    "current": "1",
     "mustHave": "html",
     "hint": [
       {
@@ -52,11 +50,15 @@
       }
     ],
     "sprites": {
+      "1": [
+        6,
+        0
+      ],
       "2": [
         7,
         0
       ],
-      "4": [
+      "3": [
         8,
         0
       ]
@@ -68,9 +70,9 @@
   },
   "preprocessors": {
     "name": "CSS Preprocessors",
-    "max": "3",
+    "max": "5",
     "sprite": "4x4",
-    "current": "0",
+    "current": "1",
     "hint": [
       {
         "text": "LESS, SASS and others"
@@ -101,14 +103,17 @@
       }
     ],
     "sprites": {
-      "2": [
+      "1": [
+        4,
+        4
+      ],
+      "1": [
         5,
         4
       ],
-      "3": [
-        6,
-        4
-      ]
+      "2": [6, 4],
+      "3": [7, 4],
+      "4": [8, 4]
     },
     "dependency": {
       "1": {
