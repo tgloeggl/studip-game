@@ -16,8 +16,7 @@ class StudipGame extends StudIPPlugin implements SystemPlugin {
         parent::__construct();
 
         $navigation = new AutoNavigation(_('StudipGame'));
-        $navigation->setURL(PluginEngine::GetURL($this, array(), 'show'));
-        $navigation->setImage(Assets::image_path('blank.gif'));
+        $navigation->setURL(PluginEngine::GetURL($this, array(), 'index'));
         Navigation::addItem('/studipgame', $navigation);
     }
 
@@ -31,7 +30,7 @@ class StudipGame extends StudIPPlugin implements SystemPlugin {
         $dispatcher = new Trails_Dispatcher(
             $this->getPluginPath(),
             rtrim(PluginEngine::getLink($this, array(), null), '/'),
-            'show'
+            'index'
         );
         $dispatcher->plugin = $this;
         $dispatcher->dispatch($unconsumed_path);
