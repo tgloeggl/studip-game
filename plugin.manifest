@@ -1,0 +1,5 @@
+pluginname=StudipGame
+pluginclassname=StudipGame
+origin=virtUOS
+version=0.1a
+studipMinVersion=4.0
