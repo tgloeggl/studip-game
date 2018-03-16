@@ -1,0 +1,210 @@
+/*
+style.css file is generated from style.less file. Do not modify it directly - rarther install yourself
+the LESS CSSS preprocessor.
+*/
+
+@size : 80px;
+@br : @size / 16;
+@p : 3px;
+/* @sprite: url('sprite.jpg'); */
+@sans: Arial, Helvetica, sans-serif;
+
+*{margin: 0;padding: 0;}
+.clear{clear: both;}
+
+.wrap{width:@size * 4;margin: auto;}
+
+.bg(@x, @y){background-position: -@size*@x -@size*@y;}
+
+.skillpoints_content{
+	background-color: #444;
+	color: #fff;
+	margin: 10px;
+	padding: 10px;
+}
+#skillpoints {
+    color: #ffffff;
+}
+.mainSkillTreeContener{
+	display: block;
+	margin: auto;
+	/*width: 100%;*/
+}
+.skill_group{
+	float: left;
+	width: 350px;
+}
+
+.skill{
+  position: relative;
+  text-align:center;
+  user-select:none;
+  cursor:default;
+  margin:@p * 2;
+  display : inline-block;
+  width: @size;
+  height: @size;
+  border-radius:@br;
+  box-shadow:0 @p @p * 2 @p;
+  background-size:1000% auto;
+
+  &.sm .abbr{
+      font-size: 28px;
+  }
+  &.sm2 .abbr{
+      font-size: 20px;
+  }
+  &.sm3 .abbr{
+      font-size: 14px;
+  }
+  .abbr{
+    display: none;
+    width: 100%;
+    height: 100%;
+
+
+    text-shadow:
+      0 1px rgba(255,255,255,0.8),
+      0 -1px #000;
+
+    overflow: hidden;
+
+    font:bold 48px @sans;
+
+    text-align: center;
+    line-height: @size;
+    background: #888;
+    color:#444;
+  }
+  &.nosprite .abbr{
+    display: block;
+  }
+
+
+  .status{
+    font:bold 8px @sans;
+    display: block;
+    position: absolute;
+    color:#fff;
+    bottom:@p;
+    right: @p;
+    background: rgba(0,0,0,0.5);
+    padding:@p / 4 @p / 2;
+    border-radius:@p;
+    z-index:2;
+    user-select:none;
+  }
+
+  div{
+    display: none;
+  }
+
+  &:after{
+    background:rgba(0,0,0,0.5);
+    display: block;
+    content:'';
+    top: -@p;bottom: -@p;left: -@p;right: -@p;
+    position: absolute;
+    border-radius: @br;
+    border:@p solid #888;
+    box-shadow:
+      inset 0 0 0 1px #fff,
+      0 0 0 1px #fff,
+      inset 0 0 @p * 4 rgba(0,0,0,0.5),
+      inset 0 0 @p,
+      0 0 @p;
+  }
+
+  &.available{
+    cursor:pointer;
+    &:after{
+      //bbackground:none;
+      border-color:#cc5;
+      box-shadow:
+
+
+        inset 0 0 0 1px #fff,
+        0 0 0 1px #fff,
+
+        inset 0 0 @p*3 0 #000,
+
+        0 0 @p*5 -@p #ff5,
+        inset 0 0 @p @p/2 rgba(255,255,255,0.5),
+
+        inset 0 0 @p * 4 rgba(0,0,0,0.5),
+        inset 0 0 @p,
+        0 0 @p;
+    }
+  }
+  &.active{
+    &:after{
+      background:none;
+    }
+  }
+}
+
+.skillHint{
+  font:normal 12px @sans;
+  display: none;
+  pointer-events:none;
+  position: absolute;
+  z-index:30;
+  border-radius:@p;
+  padding: @p * 2 @p * 4 @p * 8 @p * 4;
+  background: rgba(0, 0, 0, 0.9);
+  max-width:400px;
+  color:#ccc;
+  text-shadow: 0 1px 1px #000;
+
+  box-shadow:
+    0 0 0 1px #000,
+    0 0 0 2px rgba(255,255,255,0.2);
+
+  .alias{
+    display: none;
+  }
+
+  h1, h3, h3, h4{
+    color:#ffcc00;
+    margin-bottom: @p;
+  }
+  p, ul{
+    margin-bottom: @p * 3;
+    &+h1, &+h2, &+h3, &+h4{
+      margin-top: @p * 3;
+    }
+  }
+  i{
+    color:#0A0;
+  }
+  b{
+    color:#88F;
+    font-weight: normal;
+  }
+  li{
+    list-style-type: none;
+  }
+  .commamenu li{
+    float: left;
+    list-style-type:none;
+    &:before{
+      content:'';
+    }
+    &+li{
+      &:before{
+        content:', ';
+      }
+    }
+  }
+  .commamenu:after{
+    clear: both;
+    display:block;
+    content : '';
+  }
+  .reqs{
+    color:#A00;
+  }
+  .met{
+    color:#0a0;
+  }
+}

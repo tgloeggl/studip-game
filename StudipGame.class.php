@@ -16,8 +16,13 @@ class StudipGame extends StudIPPlugin implements SystemPlugin {
         parent::__construct();
 
         $navigation = new AutoNavigation(_('StudipGame'));
-        $navigation->setURL(PluginEngine::GetURL($this, array(), 'index'));
+        $navigation->setURL(PluginEngine::getURL($this, array(), 'index'));
         Navigation::addItem('/studipgame', $navigation);
+
+        PageLayout::addScript($this->getPluginURL() . '/assets/skills.js');
+        PageLayout::addScript($this->getPluginURL() . '/assets/skills_layout.js');
+        PageLayout::addScript($this->getPluginURL() . '/assets/skills_fromJSON.js');
+        $this->addStylesheet('/assets/style.less');
     }
 
     public function initialize () {
