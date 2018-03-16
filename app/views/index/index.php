@@ -4,27 +4,28 @@
     }
 </style>
 
+<?= MessageBox::info(_('Willkommen Neuling! Beginne deinen Weg durch Stud.IP!')) ?>
+
 <div id="st"></div>
+<? $pos = 150 ?>
 
 <script type="text/javascript">
 
     $(function(){
 
         skill('html')
-                .current(1)
-                .max(3)
-                .pos(400,300)
+                .current(0)
+                .max(1)
+                .pos(400, <?= $pos ?>)
                 .sprite(0,0)
                 .sprites({2:[1,0],3:[2,0]})
-                .name('Html')
-                .hint('The art of the layout.')
-                .hint('You know how to HTML.',1)
-                .hint('You know how to HTML dynamically.',2)
-                .hint('You know how to HTML5.',3)
+                .name('Trails')
+                .hint('Sprich mit dem Erfinder von Trails!')
+                .hint('Der Erfinder von Trails lautet...', 1)
         .$('#st');
 
         skill('css')
-                .pos(500,300)
+                .pos(500, <?= $pos ?>)
                 .sprite(6,0)
                 .sprites({2:[7,0],4:[8,0]})
                 .max(4)
@@ -35,7 +36,7 @@
         .$('#st');
 
         skill('preprocessors')
-                .pos(600,350)
+                .pos(600, <?= $pos + 50 ?>)
                 .sprite(4,4)
                 .max(3)
                 .dependency({1:{'css':1,'html':1},2:{'css':3}})
@@ -50,8 +51,8 @@
                 .hint('The hero knows how to set up the preprocessors and is aware of their advanced use (variables, mixins and functions) as well as mixin libraries.',3)
         .$('#st');
 
-        skill('yii').pos(700,300).abbr_color('#88f').$('#st');
-        skill('php').pos(785,385).abbr('Zend').$('#st');
+        skill('yii').pos(700, <?= $pos ?>).abbr_color('#88f').$('#st');
+        skill('php').pos(785, <?= $pos + 85 ?>).abbr('Zend').$('#st');
 
         skilltree.language.reqTitle = "Für Level {0} benötigst du:";
         skilltree.language.req = '<h4>{1}</h4><ul class="reqs commamenu">{0}</ul>',
